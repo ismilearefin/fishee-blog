@@ -6,8 +6,7 @@ import styles from "./authLink.module.css"
 
 export default function AuthLink() {
 
-  const [open,setOpen] = useState(true)
-
+  const [open,setOpen] = useState(false)
 
   const status = 'notAuthenticated'
   return (
@@ -45,3 +44,4 @@ export default function AuthLink() {
     </>
   )
 }
+
