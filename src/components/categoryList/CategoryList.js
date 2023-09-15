@@ -37,14 +37,28 @@ const data = [
 ]
 
 export default function CategoryList() {
+
+  const generateColors = (index) => {
+    const colors = [
+      '#57c4ff31',
+      '#da85c731',
+      '#7fb88133',
+      '#ff795736',
+      '#ffb04f45',
+      '#5e4fff31'
+    ];
+    return colors[index % colors.length];
+  }
+
   return (
     <div>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        {data?.map((item) => (
+        {data?.map((item,index) => (
           <Link
             href={`/blog?cat=${item.title}`}
-            className={`${styles.category} ${styles[item.title]}`}
+            className={styles.category}
+            style={{backgroundColor: generateColors(index)}}
             key={item._id}
           >
             {item.img && (
